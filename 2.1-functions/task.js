@@ -54,9 +54,12 @@ function getAverageScore(data) {
         }     
     }
 
+    let averageScore = 0;
     for (let property in data) {
         result[property] = getAverageMark(data[property]);
+        averageScore += getAverageMark(data[property]);
     }
+    result.avrege = averageScore / Object.keys(data).length;
     return result;
 };
 
